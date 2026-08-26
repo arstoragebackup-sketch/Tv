@@ -4,268 +4,204 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A.R. Plastic Surgery | Silent Reminder</title>
+<title>A.R. Plastic Surgery</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    min-height:100vh;
-    overflow:hidden;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
     background:
-        radial-gradient(circle at 50% 35%, #17304a 0%, #0b1727 35%, #040910 75%);
-    color:#fff;
-    font-family:Inter,"Noto Sans Telugu",sans-serif;
+        radial-gradient(circle at center, #142b46 0%, #081522 45%, #03070c 100%);
+    color: white;
+    font-family: Arial, "Noto Sans Telugu", sans-serif;
 }
 
-/* Ambient background */
+/* TV LANDSCAPE */
+.screen {
+    width: 100vw;
+    height: 100vh;
 
-body::before{
-    content:"";
-    position:fixed;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    background:rgba(197,157,65,.07);
-    filter:blur(100px);
-    top:-300px;
-    left:50%;
-    transform:translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 5vh 6vw;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    background:rgba(40,110,170,.06);
-    filter:blur(100px);
-    bottom:-250px;
-    right:-100px;
+/* Clinic name */
+.clinic {
+    position: absolute;
+    top: 6vh;
+
+    font-size: clamp(28px, 3vw, 55px);
+    font-weight: 700;
+
+    letter-spacing: 6px;
 }
 
-/* Main */
+/* Divider */
+.line {
+    width: 130px;
+    height: 4px;
 
-.screen{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
-    position:relative;
-    z-index:2;
+    background: #d4af37;
+
+    margin-bottom: 5vh;
 }
 
-.card{
-    width:min(1200px,92vw);
-    min-height:650px;
-    padding:70px 80px;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:35px;
-    background:rgba(255,255,255,.045);
-    backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
+/* Animated content */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+}
+
+/* PHONE SILENT ICON */
+.phone-icon {
+    position: relative;
+
+    width: clamp(80px, 7vw, 120px);
+    height: clamp(140px, 12vw, 190px);
+
+    border: 6px solid white;
+    border-radius: 22px;
+
+    margin-bottom: 4vh;
+
     box-shadow:
-        0 40px 100px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.08);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+        0 0 30px rgba(255,255,255,0.12);
 }
 
-/* Brand */
+.phone-icon::before {
+    content: "";
 
-.brand{
-    font-size:clamp(20px,2vw,30px);
-    font-weight:700;
-    letter-spacing:6px;
-    color:#f5f5f5;
+    position: absolute;
+
+    width: 35%;
+    height: 6px;
+
+    background: white;
+    border-radius: 10px;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
 }
 
-.brand span{
-    color:#d5ad54;
+.phone-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 35%;
+    height: 6px;
+
+    background: white;
+    border-radius: 10px;
+
+    bottom: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
 }
 
-.subtitle{
-    margin-top:12px;
-    font-size:13px;
-    letter-spacing:4px;
-    color:rgba(255,255,255,.5);
-    text-transform:uppercase;
+/* Silent slash */
+.silent-line {
+    position: absolute;
+
+    width: 150%;
+    height: 7px;
+
+    background: #d4af37;
+    border-radius: 10px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+
+    box-shadow: 0 0 15px rgba(212,175,55,0.5);
 }
 
-.line{
-    width:90px;
-    height:2px;
-    margin:35px auto 50px;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        #d5ad54,
-        transparent
-    );
+/* Main reminder */
+.title {
+    font-size: clamp(50px, 6vw, 105px);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    max-width: 1500px;
 }
 
-/* Icon */
+/* Quote */
+.quote {
+    margin-top: 4vh;
 
-.icon-wrapper{
-    position:relative;
-    width:130px;
-    height:130px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:40px;
+    font-size: clamp(24px, 2.5vw, 42px);
+
+    color: #d4af37;
+
+    font-style: italic;
+
+    max-width: 1200px;
+
+    line-height: 1.4;
 }
 
-.icon{
-    width:85px;
-    height:85px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:42px;
-    background:linear-gradient(
-        145deg,
-        rgba(213,173,84,.22),
-        rgba(213,173,84,.05)
-    );
-    border:1px solid rgba(213,173,84,.5);
-    box-shadow:
-        0 0 40px rgba(213,173,84,.12),
-        inset 0 0 25px rgba(213,173,84,.05);
-    position:relative;
-    z-index:2;
+/* Bottom */
+.footer {
+    position: absolute;
+
+    bottom: 5vh;
+
+    font-size: clamp(20px, 2vw, 32px);
+
+    opacity: 0.75;
 }
 
-.ring{
-    position:absolute;
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    border:1px solid rgba(213,173,84,.25);
-    animation:pulse 3s infinite;
-}
+/* Mobile fallback */
+@media (max-width: 900px) {
 
-.ring:nth-child(2){
-    animation-delay:1s;
-}
-
-.ring:nth-child(3){
-    animation-delay:2s;
-}
-
-@keyframes pulse{
-    0%{
-        transform:scale(.75);
-        opacity:.8;
-    }
-    100%{
-        transform:scale(1.7);
-        opacity:0;
-    }
-}
-
-/* Text */
-
-.content{
-    transition:.6s ease;
-}
-
-.content.hide{
-    opacity:0;
-    transform:translateY(20px);
-}
-
-.title{
-    font-size:clamp(42px,5.5vw,78px);
-    line-height:1.18;
-    font-weight:700;
-    letter-spacing:-2px;
-    max-width:1000px;
-}
-
-.highlight{
-    color:#d5ad54;
-}
-
-.quote{
-    margin-top:30px;
-    max-width:850px;
-    font-size:clamp(18px,2vw,26px);
-    line-height:1.6;
-    color:rgba(255,255,255,.65);
-    font-weight:400;
-}
-
-/* Footer */
-
-.footer{
-    margin-top:55px;
-    font-size:14px;
-    letter-spacing:2px;
-    color:rgba(255,255,255,.4);
-}
-
-.footer span{
-    color:#d5ad54;
-}
-
-/* Progress */
-
-.progress{
-    position:absolute;
-    bottom:0;
-    left:0;
-    height:3px;
-    width:0%;
-    background:linear-gradient(90deg,#a47a28,#f0d17b);
-    animation:progress 5s linear infinite;
-}
-
-@keyframes progress{
-    from{width:0%}
-    to{width:100%}
-}
-
-/* Mobile */
-
-@media(max-width:700px){
-
-    .screen{
-        padding:20px;
+    .clinic {
+        letter-spacing: 3px;
     }
 
-    .card{
-        min-height:90vh;
-        padding:40px 25px;
-        border-radius:25px;
+    .title {
+        font-size: 45px;
     }
 
-    .brand{
-        letter-spacing:3px;
+    .quote {
+        font-size: 22px;
     }
 
-    .line{
-        margin:25px auto 35px;
-    }
-
-    .title{
-        letter-spacing:-1px;
-    }
-
-    .quote{
-        font-size:17px;
+    .phone-icon {
+        transform: scale(0.75);
+        margin-bottom: 1vh;
     }
 }
 </style>
@@ -275,98 +211,90 @@ body::after{
 
 <div class="screen">
 
-<div class="card">
-
-    <div class="brand">
-        A.R. <span>PLASTIC SURGERY</span>
-    </div>
-
-    <div class="subtitle">
-        Premium Plastic • Cosmetic • Hair Surgery
+    <div class="clinic">
+        A.R. PLASTIC SURGERY
     </div>
 
     <div class="line"></div>
 
-    <div class="icon-wrapper">
+    <!-- EVERYTHING ANIMATES TOGETHER -->
+    <div id="content" class="content">
 
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-
-        <div class="icon">
-            🔕
+        <div class="phone-icon">
+            <div class="silent-line"></div>
         </div>
 
-    </div>
-
-    <div class="content" id="content">
-
-        <div class="title" id="title">
-            Please keep your phone<br>
-            on <span class="highlight">silent mode.</span>
+        <div id="title" class="title">
+            Please Keep Your Phone<br>
+            on Silent Mode
         </div>
 
-        <div class="quote" id="quote">
-            “A little silence makes the waiting room
-            comfortable for everyone.”
+        <div id="quote" class="quote">
+            "A little silence makes the waiting room comfortable for everyone."
         </div>
 
-    </div>
+        <div id="footer" class="footer">
+            Thank you for your cooperation
+        </div>
 
-    <div class="footer">
-        Thank you for your cooperation
-        <span>•</span>
-        ధన్యవాదాలు
     </div>
 
 </div>
-
-<div class="progress"></div>
-
-</div>
-
 
 <script>
 
 const content = document.getElementById("content");
 const title = document.getElementById("title");
 const quote = document.getElementById("quote");
+const footer = document.getElementById("footer");
 
 let english = true;
 
-function switchLanguage(){
+function changeLanguage() {
 
+    /* Fade/slide OUT */
     content.classList.add("hide");
 
     setTimeout(() => {
 
-        if(english){
+        if (english) {
+
+            /* TELUGU */
 
             title.innerHTML =
-                `దయచేసి మీ ఫోన్‌ను<br>
-                <span class="highlight">సైలెంట్ మోడ్‌లో</span> ఉంచండి.`;
+                "దయచేసి మీ ఫోన్‌ను<br>సైలెంట్ మోడ్‌లో ఉంచండి";
 
-            quote.textContent =
-                "“మీ నిశ్శబ్దం అందరికీ ప్రశాంతమైన మరియు సౌకర్యవంతమైన వాతావరణాన్ని అందిస్తుంది.”";
+            quote.innerHTML =
+                "“మీ నిశ్శబ్దం అందరికీ సౌకర్యవంతమైన వాతావరణాన్ని అందిస్తుంది.”";
 
-        }else{
+            footer.innerHTML =
+                "మీ సహకారానికి ధన్యవాదాలు";
+
+        } else {
+
+            /* ENGLISH */
 
             title.innerHTML =
-                `Please keep your phone<br>
-                on <span class="highlight">silent mode.</span>`;
+                "Please Keep Your Phone<br>on Silent Mode";
 
-            quote.textContent =
-                "“A little silence makes the waiting room comfortable for everyone.”";
+            quote.innerHTML =
+                "\"A little silence makes the waiting room comfortable for everyone.\"";
+
+            footer.innerHTML =
+                "Thank you for your cooperation";
+
         }
 
         english = !english;
 
+        /* Fade/slide IN */
         content.classList.remove("hide");
 
-    },600);
+    }, 700);
 }
 
-setInterval(switchLanguage,5000);
+/* Change every 5 seconds */
+setInterval(changeLanguage, 5000);
 
 </script>
 
