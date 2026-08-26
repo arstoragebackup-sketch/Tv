@@ -3,166 +3,269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A.R. Plastic Surgery | Silent Phone Reminder</title>
+
+<title>A.R. Plastic Surgery | Silent Reminder</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    min-height:100vh;
+    overflow:hidden;
     background:
-        radial-gradient(circle at 50% 20%, #1b2a45 0%, #0a101c 45%, #03060b 100%);
-    color: white;
+        radial-gradient(circle at 50% 35%, #17304a 0%, #0b1727 35%, #040910 75%);
+    color:#fff;
+    font-family:Inter,"Noto Sans Telugu",sans-serif;
 }
 
-.screen {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5vh 6vw;
+/* Ambient background */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(197,157,65,.07);
+    filter:blur(100px);
+    top:-300px;
+    left:50%;
+    transform:translateX(-50%);
 }
 
-/* Clinic name */
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(40,110,170,.06);
+    filter:blur(100px);
+    bottom:-250px;
+    right:-100px;
+}
 
-.clinic {
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
-    color: #d8b878;
-    font-size: clamp(18px, 2vw, 32px);
-    font-weight: bold;
-    letter-spacing: 4px;
+/* Main */
+
+.screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    position:relative;
+    z-index:2;
+}
+
+.card{
+    width:min(1200px,92vw);
+    min-height:650px;
+    padding:70px 80px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:35px;
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.08);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* Brand */
+
+.brand{
+    font-size:clamp(20px,2vw,30px);
+    font-weight:700;
+    letter-spacing:6px;
+    color:#f5f5f5;
+}
+
+.brand span{
+    color:#d5ad54;
+}
+
+.subtitle{
+    margin-top:12px;
+    font-size:13px;
+    letter-spacing:4px;
+    color:rgba(255,255,255,.5);
+    text-transform:uppercase;
+}
+
+.line{
+    width:90px;
+    height:2px;
+    margin:35px auto 50px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #d5ad54,
+        transparent
+    );
 }
 
 /* Icon */
 
-.phone {
-    width: 10vw;
-    max-width: 145px;
-    aspect-ratio: 0.65;
-    border: 5px solid #d8b878;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    animation: pulse 2.5s infinite;
+.icon-wrapper{
+    position:relative;
+    width:130px;
+    height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:40px;
 }
 
-.phone::before {
-    content: "";
-    position: absolute;
-    top: 9%;
-    width: 28%;
-    height: 4px;
-    background: #d8b878;
-    border-radius: 10px;
+.icon{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    background:linear-gradient(
+        145deg,
+        rgba(213,173,84,.22),
+        rgba(213,173,84,.05)
+    );
+    border:1px solid rgba(213,173,84,.5);
+    box-shadow:
+        0 0 40px rgba(213,173,84,.12),
+        inset 0 0 25px rgba(213,173,84,.05);
+    position:relative;
+    z-index:2;
 }
 
-.phone::after {
-    content: "🔇";
-    font-size: clamp(35px, 5vw, 70px);
+.ring{
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:1px solid rgba(213,173,84,.25);
+    animation:pulse 3s infinite;
 }
 
-/* Main heading */
-
-h1 {
-    margin-top: 4vh;
-    font-size: clamp(45px, 7vw, 110px);
-    line-height: 1.05;
-    font-weight: 700;
+.ring:nth-child(2){
+    animation-delay:1s;
 }
 
-.gold {
-    color: #d8b878;
+.ring:nth-child(3){
+    animation-delay:2s;
 }
 
-/* Subtitle */
-
-.subtitle {
-    margin-top: 4vh;
-    max-width: 1100px;
-    color: #d0d6df;
-    font-size: clamp(20px, 2.4vw, 38px);
-    line-height: 1.4;
-}
-
-/* Bottom message */
-
-.thanks {
-    position: absolute;
-    bottom: 5vh;
-    color: #8993a4;
-    font-size: clamp(16px, 1.4vw, 24px);
-    letter-spacing: 1px;
-}
-
-/* Button */
-
-button {
-    position: absolute;
-    bottom: 10vh;
-    padding: 14px 28px;
-    border: 1px solid #d8b878;
-    border-radius: 40px;
-    background: rgba(216,184,120,0.12);
-    color: #d8b878;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #d8b878;
-    color: #080d16;
-}
-
-/* Animation */
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 rgba(216,184,120,0);
+@keyframes pulse{
+    0%{
+        transform:scale(.75);
+        opacity:.8;
     }
-
-    50% {
-        transform: scale(1.06);
-        box-shadow: 0 0 50px rgba(216,184,120,0.25);
+    100%{
+        transform:scale(1.7);
+        opacity:0;
     }
 }
 
-/* TV landscape optimization */
+/* Text */
 
-@media (max-height: 600px) {
+.content{
+    transition:.6s ease;
+}
 
-    .clinic {
-        top: 3vh;
+.content.hide{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.title{
+    font-size:clamp(42px,5.5vw,78px);
+    line-height:1.18;
+    font-weight:700;
+    letter-spacing:-2px;
+    max-width:1000px;
+}
+
+.highlight{
+    color:#d5ad54;
+}
+
+.quote{
+    margin-top:30px;
+    max-width:850px;
+    font-size:clamp(18px,2vw,26px);
+    line-height:1.6;
+    color:rgba(255,255,255,.65);
+    font-weight:400;
+}
+
+/* Footer */
+
+.footer{
+    margin-top:55px;
+    font-size:14px;
+    letter-spacing:2px;
+    color:rgba(255,255,255,.4);
+}
+
+.footer span{
+    color:#d5ad54;
+}
+
+/* Progress */
+
+.progress{
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:3px;
+    width:0%;
+    background:linear-gradient(90deg,#a47a28,#f0d17b);
+    animation:progress 5s linear infinite;
+}
+
+@keyframes progress{
+    from{width:0%}
+    to{width:100%}
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+    .screen{
+        padding:20px;
     }
 
-    .phone {
-        width: 7vw;
+    .card{
+        min-height:90vh;
+        padding:40px 25px;
+        border-radius:25px;
     }
 
-    h1 {
-        margin-top: 2vh;
+    .brand{
+        letter-spacing:3px;
     }
 
-    .subtitle {
-        margin-top: 2vh;
+    .line{
+        margin:25px auto 35px;
     }
 
-    .thanks {
-        bottom: 3vh;
+    .title{
+        letter-spacing:-1px;
+    }
+
+    .quote{
+        font-size:17px;
     }
 }
 </style>
@@ -172,77 +275,98 @@ button:hover {
 
 <div class="screen">
 
-    <div class="clinic">
-        A.R. PLASTIC SURGERY
+<div class="card">
+
+    <div class="brand">
+        A.R. <span>PLASTIC SURGERY</span>
     </div>
 
-    <div class="phone"></div>
+    <div class="subtitle">
+        Premium Plastic • Cosmetic • Hair Surgery
+    </div>
 
-    <h1>
-        PLEASE KEEP YOUR<br>
-        <span class="gold">PHONE SILENT</span>
-    </h1>
+    <div class="line"></div>
 
-    <p class="subtitle">
-        Kindly switch your mobile phone to silent mode
-        while you are inside the clinic.
-    </p>
+    <div class="icon-wrapper">
 
-    <p class="thanks">
-        Thank you for helping us maintain a peaceful environment.
-    </p>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
 
-    <button id="audioButton">
-        🔊 START AUDIO
-    </button>
+        <div class="icon">
+            🔕
+        </div>
+
+    </div>
+
+    <div class="content" id="content">
+
+        <div class="title" id="title">
+            Please keep your phone<br>
+            on <span class="highlight">silent mode.</span>
+        </div>
+
+        <div class="quote" id="quote">
+            “A little silence makes the waiting room
+            comfortable for everyone.”
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Thank you for your cooperation
+        <span>•</span>
+        ధన్యవాదాలు
+    </div>
 
 </div>
 
+<div class="progress"></div>
+
+</div>
+
+
 <script>
 
-let active = false;
-let timer;
+const content = document.getElementById("content");
+const title = document.getElementById("title");
+const quote = document.getElementById("quote");
 
-function announce() {
+let english = true;
 
-    if (!("speechSynthesis" in window)) return;
+function switchLanguage(){
 
-    speechSynthesis.cancel();
+    content.classList.add("hide");
 
-    const speech = new SpeechSynthesisUtterance(
-        "Attention please. Kindly keep your mobile phone on silent mode while you are inside the clinic. Thank you for your cooperation."
-    );
+    setTimeout(() => {
 
-    speech.rate = 0.85;
-    speech.pitch = 1;
-    speech.volume = 1;
+        if(english){
 
-    speechSynthesis.speak(speech);
+            title.innerHTML =
+                `దయచేసి మీ ఫోన్‌ను<br>
+                <span class="highlight">సైలెంట్ మోడ్‌లో</span> ఉంచండి.`;
+
+            quote.textContent =
+                "“మీ నిశ్శబ్దం అందరికీ ప్రశాంతమైన మరియు సౌకర్యవంతమైన వాతావరణాన్ని అందిస్తుంది.”";
+
+        }else{
+
+            title.innerHTML =
+                `Please keep your phone<br>
+                on <span class="highlight">silent mode.</span>`;
+
+            quote.textContent =
+                "“A little silence makes the waiting room comfortable for everyone.”";
+        }
+
+        english = !english;
+
+        content.classList.remove("hide");
+
+    },600);
 }
 
-document.getElementById("audioButton").onclick = function () {
-
-    if (!active) {
-
-        active = true;
-
-        announce();
-
-        timer = setInterval(announce, 180000);
-
-        this.innerHTML = "🔇 STOP AUDIO";
-
-    } else {
-
-        active = false;
-
-        clearInterval(timer);
-
-        speechSynthesis.cancel();
-
-        this.innerHTML = "🔊 START AUDIO";
-    }
-};
+setInterval(switchLanguage,5000);
 
 </script>
 
