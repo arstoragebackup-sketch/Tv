@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.R. Plastic Surgery | Silent Phone Reminder</title>
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 50% 20%, #1b2a45 0%, #0a101c 45%, #03060b 100%);
+    color: white;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5vh 6vw;
+}
+
+/* Clinic name */
+
+.clinic {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    color: #d8b878;
+    font-size: clamp(18px, 2vw, 32px);
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/* Icon */
+
+.phone {
+    width: 10vw;
+    max-width: 145px;
+    aspect-ratio: 0.65;
+    border: 5px solid #d8b878;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: pulse 2.5s infinite;
+}
+
+.phone::before {
+    content: "";
+    position: absolute;
+    top: 9%;
+    width: 28%;
+    height: 4px;
+    background: #d8b878;
+    border-radius: 10px;
+}
+
+.phone::after {
+    content: "🔇";
+    font-size: clamp(35px, 5vw, 70px);
+}
+
+/* Main heading */
+
+h1 {
+    margin-top: 4vh;
+    font-size: clamp(45px, 7vw, 110px);
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.gold {
+    color: #d8b878;
+}
+
+/* Subtitle */
+
+.subtitle {
+    margin-top: 4vh;
+    max-width: 1100px;
+    color: #d0d6df;
+    font-size: clamp(20px, 2.4vw, 38px);
+    line-height: 1.4;
+}
+
+/* Bottom message */
+
+.thanks {
+    position: absolute;
+    bottom: 5vh;
+    color: #8993a4;
+    font-size: clamp(16px, 1.4vw, 24px);
+    letter-spacing: 1px;
+}
+
+/* Button */
+
+button {
+    position: absolute;
+    bottom: 10vh;
+    padding: 14px 28px;
+    border: 1px solid #d8b878;
+    border-radius: 40px;
+    background: rgba(216,184,120,0.12);
+    color: #d8b878;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d8b878;
+    color: #080d16;
+}
+
+/* Animation */
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(216,184,120,0);
+    }
+
+    50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 50px rgba(216,184,120,0.25);
+    }
+}
+
+/* TV landscape optimization */
+
+@media (max-height: 600px) {
+
+    .clinic {
+        top: 3vh;
+    }
+
+    .phone {
+        width: 7vw;
+    }
+
+    h1 {
+        margin-top: 2vh;
+    }
+
+    .subtitle {
+        margin-top: 2vh;
+    }
+
+    .thanks {
+        bottom: 3vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="screen">
+
+    <div class="clinic">
+        A.R. PLASTIC SURGERY
+    </div>
+
+    <div class="phone"></div>
+
+    <h1>
+        PLEASE KEEP YOUR<br>
+        <span class="gold">PHONE SILENT</span>
+    </h1>
+
+    <p class="subtitle">
+        Kindly switch your mobile phone to silent mode
+        while you are inside the clinic.
+    </p>
+
+    <p class="thanks">
+        Thank you for helping us maintain a peaceful environment.
+    </p>
+
+    <button id="audioButton">
+        🔊 START AUDIO
+    </button>
+
+</div>
+
+<script>
+
+let active = false;
+let timer;
+
+function announce() {
+
+    if (!("speechSynthesis" in window)) return;
+
+    speechSynthesis.cancel();
+
+    const speech = new SpeechSynthesisUtterance(
+        "Attention please. Kindly keep your mobile phone on silent mode while you are inside the clinic. Thank you for your cooperation."
+    );
+
+    speech.rate = 0.85;
+    speech.pitch = 1;
+    speech.volume = 1;
+
+    speechSynthesis.speak(speech);
+}
+
+document.getElementById("audioButton").onclick = function () {
+
+    if (!active) {
+
+        active = true;
+
+        announce();
+
+        timer = setInterval(announce, 180000);
+
+        this.innerHTML = "🔇 STOP AUDIO";
+
+    } else {
+
+        active = false;
+
+        clearInterval(timer);
+
+        speechSynthesis.cancel();
+
+        this.innerHTML = "🔊 START AUDIO";
+    }
+};
+
+</script>
+
+</body>
+</html>
