@@ -32,18 +32,20 @@ body {
 
 body {
     background: #03111f;
-    color: white;
+    color: #ffffff;
 
     font-family:
         "Manrope",
         "Noto Sans Telugu",
         Arial,
         sans-serif;
+
+    -webkit-font-smoothing: antialiased;
 }
 
 
 /* =====================================================
-   MAIN SCREEN
+   SCREEN
 ===================================================== */
 
 .screen {
@@ -56,29 +58,31 @@ body {
 
     background:
         radial-gradient(
-            circle at 20% 45%,
-            rgba(28, 91, 143, 0.35),
-            transparent 40%
+            circle at 15% 45%,
+            rgba(24, 79, 125, 0.34),
+            transparent 38%
         ),
+
         radial-gradient(
-            circle at 82% 20%,
-            rgba(212, 175, 55, 0.10),
+            circle at 85% 20%,
+            rgba(212, 175, 55, 0.09),
             transparent 30%
         ),
+
         linear-gradient(
-            120deg,
-            #04182a 0%,
-            #082b46 52%,
+            125deg,
+            #061b2e 0%,
+            #082b47 48%,
             #020c16 100%
         );
 }
 
 
 /* =====================================================
-   GOLD EDGE
+   GOLD ACCENT
 ===================================================== */
 
-.gold-edge {
+.gold-accent {
     position: absolute;
 
     left: 0;
@@ -91,8 +95,8 @@ body {
         linear-gradient(
             to bottom,
             transparent,
-            #d4af37 20%,
-            #d4af37 80%,
+            #d4af37 22%,
+            #d4af37 78%,
             transparent
         );
 }
@@ -106,51 +110,53 @@ body {
     position: absolute;
 
     left: 5%;
-    top: 5%;
+    top: 4%;
 
-    z-index: 10;
+    z-index: 20;
 }
 
-.logo-text {
+.brand {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        27px,
-        3.2vw,
-        50px
+        25px,
+        3vw,
+        48px
     );
 
     font-weight: 600;
 
     letter-spacing: 5px;
 
-    color: #f8f5ec;
+    line-height: 1.05;
+
+    color: #ffffff;
 }
 
-.logo-text span {
+.brand span {
     color: #d4af37;
 }
 
 .doctor-line {
-    margin-top: 9px;
+    margin-top: 8px;
 
-    color: #aebdca;
+    color: #bccbd7;
 
     font-size: clamp(
         10px,
-        .9vw,
+        0.9vw,
         15px
     );
 
-    letter-spacing: .5px;
+    letter-spacing: .4px;
 }
 
 .doctor-line strong {
     color: #d4af37;
 }
 
-.gold-line {
-    width: 85px;
+.header-line {
+    width: 90px;
     height: 2px;
 
     margin-top: 12px;
@@ -163,15 +169,15 @@ body {
    LEFT MAIN MESSAGE
 ===================================================== */
 
-.message-area {
+.left-main {
     position: absolute;
 
     left: 5%;
-    top: 29%;
+    top: 25%;
 
-    width: 43%;
+    width: 46%;
 
-    z-index: 5;
+    z-index: 10;
 }
 
 
@@ -179,36 +185,32 @@ body {
    PHONE ICON
 ===================================================== */
 
-.phone-circle {
-    width: 68px;
-    height: 68px;
+.icon-wrap {
+    width: 62px;
+    height: 62px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
     border:
         1px solid
-        rgba(212,175,55,.65);
+        rgba(212,175,55,.55);
 
     border-radius: 50%;
 
     background:
-        rgba(212,175,55,.05);
-
-    box-shadow:
-        0 0 30px
-        rgba(212,175,55,.08);
+        rgba(212,175,55,.045);
 }
 
 .phone {
     position: relative;
 
-    width: 28px;
-    height: 44px;
+    width: 27px;
+    height: 43px;
 
     border:
         2px solid
@@ -222,10 +224,10 @@ body {
 
     position: absolute;
 
-    left: 50%;
     top: 5px;
+    left: 50%;
 
-    width: 9px;
+    width: 8px;
     height: 2px;
 
     transform:
@@ -244,7 +246,7 @@ body {
     left: 50%;
     top: 50%;
 
-    width: 43px;
+    width: 42px;
     height: 3px;
 
     transform:
@@ -261,20 +263,20 @@ body {
    LABEL
 ===================================================== */
 
-.message-label {
+.hero-label {
+    margin-bottom: 9px;
+
     color: #d4af37;
 
     font-size: clamp(
-        10px,
-        .85vw,
-        14px
+        9px,
+        .8vw,
+        13px
     );
 
     font-weight: 700;
 
     letter-spacing: 3px;
-
-    margin-bottom: 10px;
 }
 
 
@@ -282,27 +284,31 @@ body {
    MAIN TITLE
 ===================================================== */
 
-.main-title {
+.title {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        34px,
-        4.2vw,
-        67px
+        32px,
+        4vw,
+        62px
     );
 
-    line-height: 1.12;
+    line-height: 1.14;
 
     font-weight: 600;
 
     color: #ffffff;
 
+    opacity: 1;
+
+    transform: translateY(0);
+
     transition:
-        opacity .5s ease,
-        transform .5s ease;
+        opacity .65s ease,
+        transform .65s ease;
 }
 
-.main-title.fade {
+.title.fade {
     opacity: 0;
 
     transform:
@@ -315,274 +321,31 @@ body {
 ===================================================== */
 
 .quote {
-    margin-top: 17px;
+    margin-top: 14px;
 
-    max-width: 600px;
+    max-width: 580px;
 
-    color: #b8c7d3;
+    color: #b7c5d1;
 
     font-size: clamp(
-        14px,
-        1.15vw,
-        19px
+        13px,
+        1.1vw,
+        18px
     );
 
     line-height: 1.5;
 
+    opacity: 1;
+
     transition:
-        opacity .5s ease;
+        opacity .65s ease;
 }
 
 .quote.fade {
     opacity: 0;
 }
 
-.gold {
-    color: #d4af37;
-}
-
-
-/* =====================================================
-   QR AREA
-===================================================== */
-
-.qr-area {
-    position: absolute;
-
-    right: 4.5%;
-    top: 18%;
-
-    width: 48%;
-
-    z-index: 10;
-
-    padding:
-        25px 0 25px 35px;
-
-    border-left:
-        1px solid
-        rgba(212,175,55,.35);
-}
-
-
-/* =====================================================
-   QR HEADING
-===================================================== */
-
-.qr-heading {
-    text-align: center;
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(
-        20px,
-        1.7vw,
-        29px
-    );
-
-    color: #ffffff;
-
-    margin-bottom: 5px;
-}
-
-.qr-heading span {
-    color: #d4af37;
-}
-
-.qr-subheading {
-    text-align: center;
-
-    color: #8ea2b3;
-
-    font-size: clamp(
-        10px,
-        .85vw,
-        14px
-    );
-
-    margin-bottom: 22px;
-}
-
-
-/* =====================================================
-   QR GRID
-===================================================== */
-
-.qr-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    align-items: start;
-}
-
-
-/* =====================================================
-   QR CARD
-===================================================== */
-
-.qr-card {
-    text-align: center;
-
-    padding: 12px 7px 15px;
-
-    border:
-        1px solid
-        rgba(212,175,55,.18);
-
-    border-radius: 14px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease;
-}
-
-.qr-card.review {
-    border-color:
-        rgba(212,175,55,.55);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(212,175,55,.10),
-            rgba(255,255,255,.025)
-        );
-}
-
-
-/* =====================================================
-   LARGE QR
-===================================================== */
-
-.qr {
-    display: block;
-
-    width: clamp(
-        130px,
-        11vw,
-        185px
-    );
-
-    height: clamp(
-        130px,
-        11vw,
-        185px
-    );
-
-    margin: auto;
-
-    padding: 7px;
-
-    background: white;
-
-    border-radius: 9px;
-
-    object-fit: contain;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.35);
-}
-
-
-/* =====================================================
-   QR TEXT
-===================================================== */
-
-.qr-title {
-    margin-top: 11px;
-
-    color: #d4af37;
-
-    font-size: clamp(
-        11px,
-        1vw,
-        16px
-    );
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-}
-
-.qr-description {
-    margin-top: 4px;
-
-    color: #9aabb9;
-
-    font-size: clamp(
-        8px,
-        .7vw,
-        12px
-    );
-
-    line-height: 1.35;
-}
-
-.discount {
-    margin-top: 5px;
-
-    color: #ffffff;
-
-    font-size: clamp(
-        9px,
-        .75vw,
-        13px
-    );
-}
-
-.discount strong {
-    color: #d4af37;
-}
-
-
-/* =====================================================
-   DOCTOR INFORMATION
-===================================================== */
-
-.doctor-card {
-    margin-top: 22px;
-
-    padding-top: 17px;
-
-    border-top:
-        1px solid
-        rgba(212,175,55,.25);
-
-    text-align: center;
-}
-
-.doctor-name {
-    font-family: "Cinzel", serif;
-
-    color: #ffffff;
-
-    font-size: clamp(
-        17px,
-        1.4vw,
-        23px
-    );
-}
-
-.doctor-credentials {
-    margin-top: 5px;
-
-    color: #9eafbd;
-
-    font-size: clamp(
-        9px,
-        .8vw,
-        13px
-    );
-}
-
-.doctor-credentials span {
+.gold-text {
     color: #d4af37;
 }
 
@@ -601,48 +364,54 @@ body {
 
     z-index: 12;
 
-    padding-top: 13px;
+    padding-top: 12px;
 
     border-top:
         1px solid
-        rgba(212,175,55,.25);
+        rgba(212,175,55,.28);
 }
 
-.why-title {
+.why-heading {
+    margin-bottom: 7px;
+
     color: #d4af37;
 
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        13px,
-        1.05vw,
-        18px
+        12px,
+        1vw,
+        17px
     );
 
-    letter-spacing: 1.5px;
+    font-weight: 600;
 
-    margin-bottom: 7px;
+    letter-spacing: 1.4px;
 }
 
-.why-text {
-    min-height: 30px;
+.why-content {
+    min-height: 28px;
 
     color: #ffffff;
 
     font-size: clamp(
         13px,
-        1.2vw,
-        20px
+        1.15vw,
+        19px
     );
 
     font-weight: 500;
 
+    opacity: 1;
+
+    transform: translateY(0);
+
     transition:
-        opacity .55s ease,
-        transform .55s ease;
+        opacity .65s ease,
+        transform .65s ease;
 }
 
-.why-text.fade {
+.why-content.fade {
     opacity: 0;
 
     transform:
@@ -651,38 +420,234 @@ body {
 
 
 /* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.right-panel {
+    position: absolute;
+
+    right: 5%;
+    top: 18%;
+
+    width: 42%;
+
+    padding-left: 28px;
+
+    border-left:
+        1px solid
+        rgba(212,175,55,.30);
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   QR HEADING
+===================================================== */
+
+.qr-heading {
+    font-family: "Cinzel", serif;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        18px,
+        1.45vw,
+        25px
+    );
+
+    margin-bottom: 4px;
+}
+
+.qr-heading span {
+    color: #d4af37;
+}
+
+.qr-description {
+    color: #8fa2b5;
+
+    font-size: clamp(
+        9px,
+        .78vw,
+        13px
+    );
+
+    margin-bottom: 16px;
+}
+
+
+/* =====================================================
+   QR GRID
+===================================================== */
+
+.qr-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.qr-item {
+    text-align: center;
+
+    min-width: 0;
+}
+
+.qr {
+    display: block;
+
+    width: clamp(
+        105px,
+        8.5vw,
+        140px
+    );
+
+    height: clamp(
+        105px,
+        8.5vw,
+        140px
+    );
+
+    padding: 6px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.30);
+}
+
+.qr-name {
+    margin-top: 8px;
+
+    color: #d4af37;
+
+    font-size: clamp(
+        9px,
+        .8vw,
+        13px
+    );
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.qr-text {
+    margin-top: 3px;
+
+    color: #899baa;
+
+    font-size: clamp(
+        8px,
+        .65vw,
+        11px
+    );
+}
+
+.discount {
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        8px,
+        .65vw,
+        11px
+    );
+}
+
+.discount strong {
+    color: #d4af37;
+}
+
+
+/* =====================================================
+   CREDENTIALS
+===================================================== */
+
+.credentials {
+    margin-top: 24px;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid
+        rgba(212,175,55,.22);
+}
+
+.credential-name {
+    color: #ffffff;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(
+        15px,
+        1.2vw,
+        20px
+    );
+
+    margin-bottom: 4px;
+}
+
+.credential-details {
+    color: #aab8c4;
+
+    font-size: clamp(
+        9px,
+        .8vw,
+        13px
+    );
+
+    line-height: 1.5;
+}
+
+.gold-dot {
+    color: #d4af37;
+}
+
+
+/* =====================================================
    COMFORT MESSAGE
 ===================================================== */
 
 .comfort {
-    position: absolute;
+    margin-top: 14px;
 
-    right: 5%;
+    min-height: 24px;
 
-    bottom: 18%;
-
-    width: 43%;
-
-    z-index: 10;
-
-    text-align: center;
-
-    color: #aebdca;
+    color: #c6d1db;
 
     font-size: clamp(
-        11px,
-        .9vw,
-        15px
+        10px,
+        .85vw,
+        14px
     );
 
     font-style: italic;
 
+    opacity: 1;
+
+    transform: translateY(0);
+
     transition:
-        opacity .55s ease;
+        opacity .65s ease,
+        transform .65s ease;
 }
 
 .comfort.fade {
     opacity: 0;
+
+    transform:
+        translateY(7px);
 }
 
 
@@ -693,17 +658,19 @@ body {
 .services {
     position: absolute;
 
-    left: 4.5%;
-    right: 4.5%;
+    left: 5%;
+    right: 5%;
 
-    bottom: 9%;
+    bottom: 8.5%;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     z-index: 20;
-
-    text-align: center;
-
-    padding:
-        10px 0;
 
     border-top:
         1px solid
@@ -717,8 +684,8 @@ body {
 
     font-size: clamp(
         8px,
-        .75vw,
-        13px
+        .7vw,
+        12px
     );
 
     letter-spacing: 1.2px;
@@ -732,56 +699,100 @@ body {
 
 
 /* =====================================================
-   CONTACT
+   PHONE SCROLL BAR
 ===================================================== */
 
-.contact {
+.contact-bar {
     position: absolute;
 
-    left: 5%;
-    right: 5%;
+    left: 0;
+    bottom: 0;
 
-    bottom: 3%;
+    width: 100%;
+
+    height: 6%;
+
+    overflow: hidden;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
+    z-index: 30;
 
-    z-index: 20;
+    background:
+        rgba(1,8,15,.92);
+
+    border-top:
+        1px solid
+        rgba(212,175,55,.28);
 }
 
-.location {
-    color: #708493;
 
-    font-size: clamp(
-        9px,
-        .7vw,
-        12px
-    );
+/* =====================================================
+   SCROLL TRACK
+===================================================== */
 
-    letter-spacing: 1px;
-}
-
-.phone-numbers {
+.contact-track {
     display: flex;
 
-    gap: 30px;
+    align-items: center;
 
-    color: white;
+    width: max-content;
 
-    font-size: clamp(
-        10px,
-        .85vw,
-        15px
-    );
+    white-space: nowrap;
 
-    font-weight: 600;
+    animation:
+        phoneScroll
+        32s
+        linear
+        infinite;
+
+    will-change: transform;
 }
 
-.phone-numbers strong {
+
+/*
+   SLOW PHONE SCROLL
+*/
+
+@keyframes phoneScroll {
+
+    0% {
+        transform:
+            translateX(100vw);
+    }
+
+    100% {
+        transform:
+            translateX(-100%);
+    }
+
+}
+
+
+.contact-item {
+    display: inline-block;
+
+    margin-right: 120px;
+
+    color: #d4dde5;
+
+    font-size: clamp(
+        13px,
+        1.05vw,
+        18px
+    );
+
+    font-weight: 500;
+
+    letter-spacing: .8px;
+}
+
+.contact-item strong {
     color: #d4af37;
+
+    font-weight: 700;
 }
 
 
@@ -793,21 +804,25 @@ body {
 (min-width: 1500px)
 and (min-height: 850px) {
 
-    .qr-area {
-        top: 17%;
-    }
-
-    .qr {
-        width: 180px;
-        height: 180px;
-    }
-
-    .message-area {
-        top: 29%;
+    .left-main {
+        top: 25%;
     }
 
     .why-section {
         bottom: 18%;
+    }
+
+    .right-panel {
+        top: 18%;
+    }
+
+    .qr {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-track {
+        animation-duration: 38s;
     }
 }
 
@@ -816,45 +831,37 @@ and (min-height: 850px) {
    1366 × 768
 ===================================================== */
 
-@media
-(min-width: 1100px)
-and (max-width: 1499px) {
+@media (max-width: 1450px) {
 
-    .logo-text {
-        font-size: 32px;
+    .brand {
+        font-size: 30px;
     }
 
-    .message-area {
-        top: 28%;
+    .left-main {
+        top: 24%;
     }
 
-    .main-title {
-        font-size: 43px;
+    .title {
+        font-size: 40px;
     }
 
-    .qr-area {
-        top: 16%;
-        width: 49%;
-        padding-left: 25px;
+    .right-panel {
+        width: 43%;
     }
 
     .qr {
-        width: 125px;
-        height: 125px;
+        width: 105px;
+        height: 105px;
     }
 
     .why-section {
         bottom: 18%;
     }
-
-    .services {
-        bottom: 9%;
-    }
 }
 
 
 /* =====================================================
-   SHORT LANDSCAPE SCREENS
+   SMALL LANDSCAPE
 ===================================================== */
 
 @media (max-height: 700px) {
@@ -863,58 +870,50 @@ and (max-width: 1499px) {
         top: 3%;
     }
 
-    .message-area {
-        top: 25%;
+    .left-main {
+        top: 23%;
     }
 
-    .phone-circle {
-        width: 52px;
-        height: 52px;
+    .icon-wrap {
+        transform: scale(.82);
 
-        margin-bottom: 8px;
+        transform-origin:
+            left center;
+
+        margin-bottom: 4px;
     }
 
-    .main-title {
-        font-size: 34px;
+    .title {
+        font-size: 35px;
     }
 
     .quote {
         font-size: 12px;
-        margin-top: 9px;
-    }
-
-    .qr-area {
-        top: 13%;
-    }
-
-    .qr-heading {
-        font-size: 18px;
-    }
-
-    .qr-subheading {
-        margin-bottom: 10px;
-    }
-
-    .qr {
-        width: 95px;
-        height: 95px;
-    }
-
-    .doctor-card {
-        margin-top: 10px;
-        padding-top: 8px;
     }
 
     .why-section {
         bottom: 17%;
     }
 
+    .right-panel {
+        top: 16%;
+    }
+
+    .qr {
+        width: 90px;
+        height: 90px;
+    }
+
+    .credentials {
+        margin-top: 12px;
+    }
+
     .services {
         bottom: 8%;
     }
 
-    .contact {
-        bottom: 2%;
+    .contact-bar {
+        height: 6%;
     }
 }
 
@@ -926,7 +925,7 @@ and (max-width: 1499px) {
 
 <div class="screen">
 
-    <div class="gold-edge"></div>
+    <div class="gold-accent"></div>
 
 
     <!-- =================================================
@@ -935,7 +934,7 @@ and (max-width: 1499px) {
 
     <header class="header">
 
-        <div class="logo-text">
+        <div class="brand">
             A.R.
             <span>PLASTIC SURGERY</span>
         </div>
@@ -946,39 +945,45 @@ and (max-width: 1499px) {
             Plastic, Cosmetic & Hair Transplant Surgeon
         </div>
 
-        <div class="gold-line"></div>
+        <div class="header-line"></div>
 
     </header>
 
 
     <!-- =================================================
-         MAIN SILENT MESSAGE
+         LEFT MAIN
     ================================================== -->
 
-    <section class="message-area">
+    <main class="left-main">
 
-        <div class="phone-circle">
+
+        <div class="icon-wrap">
+
             <div class="phone"></div>
+
         </div>
 
-        <div class="message-label">
+
+        <div class="hero-label">
             A COURTESY FOR EVERYONE
         </div>
 
+
         <div
-            id="mainTitle"
-            class="main-title">
+            id="title"
+            class="title">
 
             Please Keep Your Phone<br>
             on Silent Mode
 
         </div>
 
+
         <div
             id="quote"
             class="quote">
 
-            <span class="gold">
+            <span class="gold-text">
                 A little silence
             </span>
             makes the waiting room
@@ -986,7 +991,8 @@ and (max-width: 1499px) {
 
         </div>
 
-    </section>
+
+    </main>
 
 
     <!-- =================================================
@@ -995,13 +1001,13 @@ and (max-width: 1499px) {
 
     <section class="why-section">
 
-        <div class="why-title">
+        <div class="why-heading">
             WHY CHOOSE A.R. PLASTIC SURGERY?
         </div>
 
         <div
-            id="whyText"
-            class="why-text">
+            id="whyContent"
+            class="why-content">
 
             Experienced Surgical Care
 
@@ -1011,40 +1017,42 @@ and (max-width: 1499px) {
 
 
     <!-- =================================================
-         QR AREA
+         RIGHT PANEL
     ================================================== -->
 
-    <section class="qr-area">
+    <aside class="right-panel">
+
 
         <div class="qr-heading">
             Stay Connected
             <span>With Us</span>
         </div>
 
-        <div class="qr-subheading">
-            Scan to connect with A.R. Plastic Surgery
+
+        <div class="qr-description">
+            Scan to review, follow or contact our team.
         </div>
 
 
-        <div class="qr-grid">
+        <div class="qr-list">
 
 
             <!-- REVIEW -->
 
-            <div class="qr-card review">
+            <div class="qr-item">
 
                 <img
                     src="review-qr.png"
                     class="qr"
-                    alt="Google Review QR Code"
+                    alt="Review QR Code"
                 >
 
-                <div class="qr-title">
+                <div class="qr-name">
                     REVIEW
                 </div>
 
-                <div class="qr-description">
-                    Rate your experience
+                <div class="qr-text">
+                    Share your experience
                 </div>
 
                 <div class="discount">
@@ -1057,7 +1065,7 @@ and (max-width: 1499px) {
 
             <!-- INSTAGRAM -->
 
-            <div class="qr-card">
+            <div class="qr-item">
 
                 <img
                     src="instagram-qr.png"
@@ -1065,11 +1073,11 @@ and (max-width: 1499px) {
                     alt="Instagram QR Code"
                 >
 
-                <div class="qr-title">
+                <div class="qr-name">
                     INSTAGRAM
                 </div>
 
-                <div class="qr-description">
+                <div class="qr-text">
                     Follow our page
                 </div>
 
@@ -1078,7 +1086,7 @@ and (max-width: 1499px) {
 
             <!-- WHATSAPP -->
 
-            <div class="qr-card">
+            <div class="qr-item">
 
                 <img
                     src="whatsapp-qr.png"
@@ -1086,58 +1094,62 @@ and (max-width: 1499px) {
                     alt="WhatsApp QR Code"
                 >
 
-                <div class="qr-title">
+                <div class="qr-name">
                     WHATSAPP
                 </div>
 
-                <div class="qr-description">
-                    Chat with our team
+                <div class="qr-text">
+                    Book an appointment
                 </div>
 
             </div>
+
 
         </div>
 
 
-        <!-- DOCTOR -->
+        <!-- =================================================
+             DOCTOR
+        ================================================== -->
 
-        <div class="doctor-card">
+        <section class="credentials">
 
-            <div class="doctor-name">
+            <div class="credential-name">
                 Dr. Ashok Reddy
             </div>
 
-            <div class="doctor-credentials">
+            <div class="credential-details">
 
                 MBBS
-                <span>•</span>
+                <span class="gold-dot">•</span>
 
                 DNB (Mumbai)
-                <span>•</span>
+                <span class="gold-dot">•</span>
 
                 M.Ch (Delhi)
-                <span>•</span>
+                <span class="gold-dot">•</span>
 
                 Gold Medalist
 
             </div>
 
+        </section>
+
+
+        <!-- =================================================
+             COMFORT
+        ================================================== -->
+
+        <div
+            id="comfort"
+            class="comfort">
+
+            Your comfort matters to us.
+
         </div>
 
-    </section>
 
-
-    <!-- =================================================
-         COMFORT
-    ================================================== -->
-
-    <div
-        id="comfort"
-        class="comfort">
-
-        Your comfort matters to us.
-
-    </div>
+    </aside>
 
 
     <!-- =================================================
@@ -1164,32 +1176,65 @@ and (max-width: 1499px) {
 
 
     <!-- =================================================
-         CONTACT
+         SCROLLING PHONE BAR
     ================================================== -->
 
-    <footer class="contact">
+    <div class="contact-bar">
 
-        <div class="location">
-            A.R. PLASTIC SURGERY
-            &nbsp;•&nbsp;
-            KARIMNAGAR
-        </div>
+        <div class="contact-track">
 
-        <div class="phone-numbers">
 
-            <div>
-                Call
+            <div class="contact-item">
+
+                📞 Call Us:
                 <strong>9182656866</strong>
+
             </div>
 
-            <div>
-                Call
+
+            <div class="contact-item">
+
+                📞 Call Us:
                 <strong>6281395312</strong>
+
             </div>
+
+
+            <div class="contact-item">
+
+                A.R. Plastic Surgery
+                • Karimnagar
+
+            </div>
+
+
+            <div class="contact-item">
+
+                📞 Appointments:
+                <strong>9182656866</strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                📞 WhatsApp:
+                <strong>6281395312</strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                A.R. Plastic Surgery
+                • Karimnagar
+
+            </div>
+
 
         </div>
 
-    </footer>
+    </div>
 
 </div>
 
@@ -1197,71 +1242,61 @@ and (max-width: 1499px) {
 <script>
 
 /* =====================================================
-   ELEMENTS
+   SILENT MESSAGE ANIMATION
 ===================================================== */
 
-const mainTitle =
-    document.getElementById("mainTitle");
+const titleElement =
+    document.getElementById("title");
 
-const quote =
+const quoteElement =
     document.getElementById("quote");
 
-const whyText =
-    document.getElementById("whyText");
 
-const comfort =
-    document.getElementById("comfort");
+const silentMessages = [
+
+    {
+        title:
+            "Please Keep Your Phone<br>" +
+            "on Silent Mode",
+
+        quote:
+            '<span class="gold-text">' +
+            'A little silence' +
+            '</span> makes the waiting room ' +
+            'comfortable for everyone.'
+    },
+
+    {
+        title:
+            "దయచేసి మీ ఫోన్‌ను<br>" +
+            "సైలెంట్ మోడ్‌లో ఉంచండి",
+
+        quote:
+            '<span class="gold-text">' +
+            'మీ నిశ్శబ్దం' +
+            '</span> అందరికీ సౌకర్యవంతమైన ' +
+            'వాతావరణాన్ని అందిస్తుంది.'
+    }
+
+];
 
 
-/* =====================================================
-   ENGLISH / TELUGU
-===================================================== */
-
-let english = true;
+let silentIndex = 0;
 
 
-function changeLanguage() {
+function changeSilentMessage() {
 
-    mainTitle.classList.add("fade");
+    titleElement.classList.add("fade");
 
-    quote.classList.add("fade");
+    quoteElement.classList.add("fade");
 
 
     setTimeout(function () {
 
-        if (english) {
+        silentIndex++;
 
-            mainTitle.innerHTML =
-                "దయచేసి మీ ఫోన్‌ను<br>" +
-                "సైలెంట్ మోడ్‌లో ఉంచండి";
-
-            quote.innerHTML =
-                '<span class="gold">' +
-                'మీ నిశ్శబ్దం' +
-                '</span> అందరికీ ' +
-                'సౌకర్యవంతమైన వాతావరణాన్ని ' +
-                'అందిస్తుంది.';
-
-        } else {
-
-            mainTitle.innerHTML =
-                "Please Keep Your Phone<br>" +
-                "on Silent Mode";
-
-            quote.innerHTML =
-                '<span class="gold">' +
-                'A little silence' +
-                '</span> makes the waiting room ' +
-                'comfortable for everyone.';
-
-        }
-
-
-        english = !english;
-
-        mainTitle.classList.remove("fade");
-
-        quote.classList.remove("fade");
-
-    }, 500);
-}
+        if (
+            silentIndex >=
+            silentMessages.length
+        ) {
+            silen
