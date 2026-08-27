@@ -58,14 +58,14 @@ body {
 
     background:
         radial-gradient(
-            circle at 18% 45%,
-            rgba(27, 84, 133, 0.32),
-            transparent 38%
+            circle at 17% 42%,
+            rgba(27, 84, 133, 0.30),
+            transparent 36%
         ),
         radial-gradient(
-            circle at 82% 25%,
+            circle at 82% 20%,
             rgba(212, 175, 55, 0.08),
-            transparent 30%
+            transparent 28%
         ),
         linear-gradient(
             120deg,
@@ -110,16 +110,16 @@ body {
     left: 5%;
     top: 4%;
 
-    z-index: 10;
+    z-index: 20;
 }
 
 .brand {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        26px,
+        25px,
         3vw,
-        48px
+        46px
     );
 
     font-weight: 600;
@@ -136,17 +136,17 @@ body {
 }
 
 .doctor-line {
-    margin-top: 9px;
+    margin-top: 8px;
 
     color: #c7d2dc;
 
     font-size: clamp(
         11px,
-        1vw,
+        0.95vw,
         16px
     );
 
-    letter-spacing: .5px;
+    letter-spacing: .4px;
 }
 
 .doctor-line strong {
@@ -157,42 +157,42 @@ body {
     width: 90px;
     height: 2px;
 
-    margin-top: 13px;
+    margin-top: 12px;
 
     background: #d4af37;
 }
 
 
 /* =====================================================
-   MAIN SILENT MESSAGE
+   LEFT MAIN AREA
 ===================================================== */
 
-.hero {
+.left-column {
     position: absolute;
 
     left: 5%;
-    top: 29%;
+    top: 25%;
 
-    width: 48%;
+    width: 45%;
 
-    z-index: 5;
+    z-index: 10;
 }
 
 
 /* =====================================================
-   SILENT ICON
+   SILENT PHONE ICON
 ===================================================== */
 
 .icon-wrap {
-    width: 68px;
-    height: 68px;
+    width: 64px;
+    height: 64px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
     border:
         1px solid
@@ -202,13 +202,17 @@ body {
 
     background:
         rgba(212,175,55,.05);
+
+    box-shadow:
+        0 0 25px
+        rgba(212,175,55,.06);
 }
 
 .phone {
     position: relative;
 
-    width: 28px;
-    height: 45px;
+    width: 27px;
+    height: 43px;
 
     border:
         2px solid
@@ -225,7 +229,7 @@ body {
     top: 5px;
     left: 50%;
 
-    width: 9px;
+    width: 8px;
     height: 2px;
 
     transform:
@@ -241,11 +245,11 @@ body {
 
     position: absolute;
 
-    width: 43px;
-    height: 3px;
-
     left: 50%;
     top: 50%;
+
+    width: 42px;
+    height: 3px;
 
     transform:
         translate(-50%, -50%)
@@ -258,17 +262,17 @@ body {
 
 
 /* =====================================================
-   LABEL
+   SILENT LABEL
 ===================================================== */
 
 .hero-label {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 
     color: #d4af37;
 
     font-size: clamp(
         10px,
-        .85vw,
+        .8vw,
         14px
     );
 
@@ -279,19 +283,19 @@ body {
 
 
 /* =====================================================
-   MAIN TITLE
+   SILENT TITLE
 ===================================================== */
 
 .title {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        34px,
-        4.2vw,
-        66px
+        32px,
+        4vw,
+        62px
     );
 
-    line-height: 1.12;
+    line-height: 1.13;
 
     font-weight: 600;
 
@@ -306,7 +310,7 @@ body {
     opacity: 0;
 
     transform:
-        translateY(14px);
+        translateY(12px);
 }
 
 
@@ -315,16 +319,16 @@ body {
 ===================================================== */
 
 .quote {
-    margin-top: 15px;
+    margin-top: 13px;
 
-    max-width: 600px;
+    max-width: 570px;
 
     color: #b9c6d2;
 
     font-size: clamp(
-        14px,
-        1.2vw,
-        19px
+        13px,
+        1.1vw,
+        18px
     );
 
     line-height: 1.5;
@@ -343,49 +347,53 @@ body {
 
 
 /* =====================================================
-   WHY CHOOSE SECTION
+   WHY CHOOSE
 ===================================================== */
 
 .why-section {
     position: absolute;
 
     left: 5%;
-    top: 68%;
+    bottom: 17%;
 
-    width: 48%;
+    width: 43%;
 
-    z-index: 5;
+    z-index: 12;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid
+        rgba(212,175,55,.25);
 }
 
 .why-heading {
+    margin-bottom: 7px;
+
     color: #d4af37;
 
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        14px,
-        1.1vw,
-        18px
+        13px,
+        1vw,
+        17px
     );
 
-    letter-spacing: 1.5px;
+    font-weight: 600;
 
-    margin-bottom: 8px;
+    letter-spacing: 1.5px;
 }
 
 .why-content {
-    min-height: 32px;
-
-    display: flex;
-
-    align-items: center;
+    min-height: 28px;
 
     color: #ffffff;
 
     font-size: clamp(
-        14px,
-        1.25vw,
-        21px
+        13px,
+        1.15vw,
+        19px
     );
 
     font-weight: 500;
@@ -404,33 +412,38 @@ body {
 
 
 /* =====================================================
-   RIGHT QR SECTION
+   RIGHT COLUMN
 ===================================================== */
 
-.qr-panel {
+.right-column {
     position: absolute;
 
+    top: 18%;
     right: 5%;
-    top: 20%;
 
-    width: 38%;
+    width: 42%;
 
-    z-index: 6;
+    z-index: 10;
 
-    padding-left: 30px;
+    padding-left: 28px;
 
     border-left:
         1px solid
         rgba(212,175,55,.32);
 }
 
+
+/* =====================================================
+   QR HEADING
+===================================================== */
+
 .qr-heading {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
         18px,
-        1.5vw,
-        25px
+        1.45vw,
+        24px
     );
 
     color: #ffffff;
@@ -443,15 +456,15 @@ body {
 }
 
 .qr-description {
+    margin-bottom: 16px;
+
     color: #8fa2b5;
 
     font-size: clamp(
         10px,
-        .8vw,
-        14px
+        .78vw,
+        13px
     );
-
-    margin-bottom: 17px;
 }
 
 
@@ -465,7 +478,7 @@ body {
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 18px;
+    gap: 14px;
 }
 
 .qr-item {
@@ -476,15 +489,15 @@ body {
     display: block;
 
     width: clamp(
-        110px,
-        8.5vw,
-        140px
+        100px,
+        8vw,
+        130px
     );
 
     height: clamp(
-        110px,
-        8.5vw,
-        140px
+        100px,
+        8vw,
+        130px
     );
 
     padding: 6px;
@@ -498,19 +511,19 @@ body {
     object-fit: contain;
 
     box-shadow:
-        0 8px 22px
+        0 8px 20px
         rgba(0,0,0,.25);
 }
 
 .qr-name {
-    margin-top: 9px;
+    margin-top: 8px;
 
     color: #d4af37;
 
     font-size: clamp(
-        10px,
-        .85vw,
-        14px
+        9px,
+        .8vw,
+        13px
     );
 
     font-weight: 700;
@@ -525,7 +538,7 @@ body {
 
     font-size: clamp(
         8px,
-        .7vw,
+        .65vw,
         11px
     );
 }
@@ -537,7 +550,7 @@ body {
 
     font-size: clamp(
         8px,
-        .7vw,
+        .65vw,
         11px
     );
 }
@@ -552,27 +565,19 @@ body {
 ===================================================== */
 
 .credentials {
-    position: absolute;
+    margin-top: 25px;
 
-    right: 5%;
-    top: 56%;
+    padding-top: 13px;
 
-    width: 38%;
-
-    z-index: 5;
-
-    padding:
-        12px 0 12px 30px;
-
-    border-left:
+    border-top:
         1px solid
-        rgba(212,175,55,.32);
+        rgba(212,175,55,.20);
 }
 
 .credential-name {
-    font-family: "Cinzel", serif;
-
     color: #ffffff;
+
+    font-family: "Cinzel", serif;
 
     font-size: clamp(
         16px,
@@ -588,7 +593,7 @@ body {
 
     font-size: clamp(
         10px,
-        .85vw,
+        .82vw,
         14px
     );
 
@@ -601,27 +606,20 @@ body {
 
 
 /* =====================================================
-   ROTATING COMFORT MESSAGE
+   COMFORT MESSAGE
 ===================================================== */
 
 .comfort {
-    position: absolute;
+    margin-top: 17px;
 
-    right: 5%;
-    top: 69%;
-
-    width: 38%;
-
-    z-index: 5;
-
-    padding-left: 30px;
+    min-height: 25px;
 
     color: #c6d1db;
 
     font-size: clamp(
-        12px,
-        1vw,
-        16px
+        11px,
+        .9vw,
+        15px
     );
 
     font-style: italic;
@@ -640,7 +638,7 @@ body {
 
 
 /* =====================================================
-   SERVICES
+   SERVICES BAR
 ===================================================== */
 
 .services {
@@ -648,12 +646,13 @@ body {
 
     left: 5%;
     right: 5%;
-    bottom: 9%;
 
-    z-index: 8;
+    bottom: 8.5%;
+
+    z-index: 20;
 
     padding:
-        10px 0;
+        9px 0;
 
     border-top:
         1px solid
@@ -665,17 +664,17 @@ body {
 
     text-align: center;
 
-    color: #9eafbd;
+    white-space: nowrap;
+
+    color: #91a2b1;
 
     font-size: clamp(
-        9px,
-        .8vw,
-        13px
+        8px,
+        .72vw,
+        12px
     );
 
-    letter-spacing: 1.5px;
-
-    white-space: nowrap;
+    letter-spacing: 1.3px;
 }
 
 .services span {
@@ -684,7 +683,7 @@ body {
 
 
 /* =====================================================
-   CONTACT
+   CONTACT BAR
 ===================================================== */
 
 .contact {
@@ -692,9 +691,10 @@ body {
 
     left: 5%;
     right: 5%;
+
     bottom: 3%;
 
-    z-index: 9;
+    z-index: 20;
 
     display: flex;
 
@@ -708,8 +708,8 @@ body {
 
     font-size: clamp(
         9px,
-        .75vw,
-        13px
+        .7vw,
+        12px
     );
 
     letter-spacing: 1px;
@@ -718,14 +718,14 @@ body {
 .contact-numbers {
     display: flex;
 
-    gap: 28px;
+    gap: 25px;
 
     color: #ffffff;
 
     font-size: clamp(
-        11px,
-        .9vw,
-        15px
+        10px,
+        .85vw,
+        14px
     );
 
     font-weight: 600;
@@ -737,62 +737,127 @@ body {
 
 
 /* =====================================================
-   32-INCH FULL HD OPTIMIZATION
+   FULL HD 1920 × 1080
 ===================================================== */
 
 @media
 (min-width: 1500px)
 and (min-height: 850px) {
 
-    .hero {
-        top: 29%;
+    .left-column {
+        top: 25%;
     }
 
     .why-section {
-        top: 67%;
+        bottom: 17%;
     }
 
-    .qr-panel {
-        top: 20%;
+    .right-column {
+        top: 18%;
     }
 
-    .credentials {
-        top: 56%;
-    }
-
-    .comfort {
-        top: 68%;
+    .qr {
+        width: 130px;
+        height: 130px;
     }
 }
 
 
 /* =====================================================
-   SMALLER LANDSCAPE
+   1366 × 768 AND SIMILAR
 ===================================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1450px) {
 
-    .hero,
-    .why-section {
-        left: 4%;
-        width: 48%;
+    .brand {
+        font-size: 30px;
     }
 
-    .qr-panel,
-    .credentials,
-    .comfort {
-        right: 4%;
-        width: 39%;
+    .left-column {
+        top: 25%;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .why-section {
+        bottom: 18%;
+    }
+
+    .right-column {
+        top: 18%;
+        width: 43%;
+    }
+
+    .qr {
+        width: 105px;
+        height: 105px;
+    }
+
+    .credentials {
+        margin-top: 18px;
     }
 
     .services {
-        left: 4%;
-        right: 4%;
+        bottom: 9%;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL LANDSCAPE
+===================================================== */
+
+@media (max-height: 650px) {
+
+    .header {
+        top: 3%;
+    }
+
+    .left-column {
+        top: 23%;
+    }
+
+    .icon-wrap {
+        transform: scale(.8);
+
+        transform-origin: left center;
+
+        margin-bottom: 5px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .quote {
+        font-size: 13px;
+    }
+
+    .why-section {
+        bottom: 16%;
+    }
+
+    .right-column {
+        top: 16%;
+    }
+
+    .qr {
+        width: 90px;
+        height: 90px;
+    }
+
+    .credentials {
+        margin-top: 12px;
+    }
+
+    .services {
+        bottom: 8%;
     }
 
     .contact {
-        left: 4%;
-        right: 4%;
+        bottom: 2%;
     }
 }
 
@@ -830,18 +895,29 @@ and (min-height: 850px) {
 
 
     <!-- =================================================
-         SILENT PHONE MAIN MESSAGE
+         LEFT COLUMN
     ================================================== -->
 
-    <main class="hero">
+    <div class="left-column">
+
+
+        <!-- PHONE ICON -->
 
         <div class="icon-wrap">
+
             <div class="phone"></div>
+
         </div>
+
+
+        <!-- LABEL -->
 
         <div class="hero-label">
             A COURTESY FOR EVERYONE
         </div>
+
+
+        <!-- MAIN MESSAGE -->
 
         <div
             id="title"
@@ -851,6 +927,9 @@ and (min-height: 850px) {
             on Silent Mode
 
         </div>
+
+
+        <!-- QUOTE -->
 
         <div
             id="quote"
@@ -864,7 +943,7 @@ and (min-height: 850px) {
 
         </div>
 
-    </main>
+    </div>
 
 
     <!-- =================================================
@@ -889,20 +968,26 @@ and (min-height: 850px) {
 
 
     <!-- =================================================
-         QR SECTION
+         RIGHT COLUMN
     ================================================== -->
 
-    <aside class="qr-panel">
+    <aside class="right-column">
+
+
+        <!-- QR HEADING -->
 
         <div class="qr-heading">
             Stay Connected
             <span>With Us</span>
         </div>
 
+
         <div class="qr-description">
             Scan to review, follow or contact our team.
         </div>
 
+
+        <!-- QR CODES -->
 
         <div class="qr-list">
 
@@ -977,48 +1062,44 @@ and (min-height: 850px) {
 
         </div>
 
+
+        <!-- DOCTOR CREDENTIALS -->
+
+        <section class="credentials">
+
+            <div class="credential-name">
+                Dr. Ashok Reddy
+            </div>
+
+            <div class="credential-details">
+
+                MBBS
+                <span class="gold-dot">•</span>
+
+                DNB (Mumbai)
+                <span class="gold-dot">•</span>
+
+                M.Ch (Delhi)
+                <span class="gold-dot">•</span>
+
+                Gold Medalist
+
+            </div>
+
+        </section>
+
+
+        <!-- COMFORT MESSAGE -->
+
+        <div
+            id="comfort"
+            class="comfort">
+
+            Your comfort matters to us.
+
+        </div>
+
     </aside>
-
-
-    <!-- =================================================
-         DOCTOR CREDENTIALS
-    ================================================== -->
-
-    <section class="credentials">
-
-        <div class="credential-name">
-            Dr. Ashok Reddy
-        </div>
-
-        <div class="credential-details">
-
-            MBBS
-            <span class="gold-dot">•</span>
-
-            DNB (Mumbai)
-            <span class="gold-dot">•</span>
-
-            M.Ch (Delhi)
-            <span class="gold-dot">•</span>
-
-            Gold Medalist
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         COMFORT MESSAGE
-    ================================================== -->
-
-    <div
-        id="comfort"
-        class="comfort">
-
-        Your comfort matters to us.
-
-    </div>
 
 
     <!-- =================================================
@@ -1051,9 +1132,11 @@ and (min-height: 850px) {
     <footer class="contact">
 
         <div class="contact-clinic">
+
             A.R. PLASTIC SURGERY
             &nbsp;•&nbsp;
             KARIMNAGAR
+
         </div>
 
 
@@ -1086,42 +1169,43 @@ and (min-height: 850px) {
    ELEMENTS
 ===================================================== */
 
-const title =
+const titleElement =
     document.getElementById("title");
 
-const quote =
+const quoteElement =
     document.getElementById("quote");
 
-const whyContent =
+const whyContentElement =
     document.getElementById("whyContent");
 
-const comfort =
+const comfortElement =
     document.getElementById("comfort");
 
 
 /* =====================================================
-   ENGLISH / TELUGU SILENT MESSAGE
+   ENGLISH / TELUGU
 ===================================================== */
 
-let isEnglish = true;
+let englishMode = true;
 
 
 function changeLanguage() {
 
-    title.classList.add("fade");
+    titleElement.classList.add("fade");
 
-    quote.classList.add("fade");
+    quoteElement.classList.add("fade");
 
 
     setTimeout(function () {
 
-        if (isEnglish) {
+        if (englishMode) {
 
-            title.innerHTML =
+            titleElement.innerHTML =
                 "దయచేసి మీ ఫోన్‌ను<br>" +
                 "సైలెంట్ మోడ్‌లో ఉంచండి";
 
-            quote.innerHTML =
+
+            quoteElement.innerHTML =
                 '<span class="gold-text">' +
                 'మీ నిశ్శబ్దం' +
                 '</span> అందరికీ ' +
@@ -1130,11 +1214,12 @@ function changeLanguage() {
 
         } else {
 
-            title.innerHTML =
+            titleElement.innerHTML =
                 "Please Keep Your Phone<br>" +
                 "on Silent Mode";
 
-            quote.innerHTML =
+
+            quoteElement.innerHTML =
                 '<span class="gold-text">' +
                 'A little silence' +
                 '</span> makes the waiting room ' +
@@ -1143,16 +1228,21 @@ function changeLanguage() {
         }
 
 
-        isEnglish = !isEnglish;
+        englishMode =
+            !englishMode;
 
 
-        title.classList.remove("fade");
+        titleElement.classList.remove("fade");
 
-        quote.classList.remove("fade");
+        quoteElement.classList.remove("fade");
 
     }, 550);
 }
 
+
+/*
+   Switch every 5 seconds
+*/
 
 setInterval(
     changeLanguage,
@@ -1183,87 +1273,14 @@ let whyIndex = 0;
 
 function changeWhyMessage() {
 
-    whyContent.classList.add("fade");
+    whyContentElement.classList.add("fade");
 
 
     setTimeout(function () {
 
-        whyIndex++;
-
-        if (
-            whyIndex >=
-            whyMessages.length
-        ) {
-            whyIndex = 0;
-        }
+        whyIndex =
+            (whyIndex + 1)
+            % whyMessages.length;
 
 
-        whyContent.textContent =
-            whyMessages[whyIndex];
-
-
-        whyContent.classList.remove("fade");
-
-    }, 550);
-}
-
-
-setInterval(
-    changeWhyMessage,
-    5000
-);
-
-
-/* =====================================================
-   COMFORT MESSAGE ROTATION
-===================================================== */
-
-const comfortMessages = [
-
-    "Your comfort matters to us.",
-
-    "Your privacy matters to us.",
-
-    "Your trust matters to us."
-
-];
-
-let comfortIndex = 0;
-
-
-function changeComfortMessage() {
-
-    comfort.classList.add("fade");
-
-
-    setTimeout(function () {
-
-        comfortIndex++;
-
-        if (
-            comfortIndex >=
-            comfortMessages.length
-        ) {
-            comfortIndex = 0;
-        }
-
-
-        comfort.textContent =
-            comfortMessages[comfortIndex];
-
-
-        comfort.classList.remove("fade");
-
-    }, 600);
-}
-
-
-setInterval(
-    changeComfortMessage,
-    5500
-);
-
-</script>
-
-</body>
-</html>
+        whyContentElement.textContent 
