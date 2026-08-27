@@ -31,16 +31,14 @@ body {
 }
 
 body {
-    background: #04111f;
-    color: #ffffff;
+    background: #03111f;
+    color: white;
 
     font-family:
         "Manrope",
         "Noto Sans Telugu",
         Arial,
         sans-serif;
-
-    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -58,29 +56,29 @@ body {
 
     background:
         radial-gradient(
-            circle at 17% 42%,
-            rgba(27, 84, 133, 0.30),
-            transparent 36%
+            circle at 20% 45%,
+            rgba(28, 91, 143, 0.35),
+            transparent 40%
         ),
         radial-gradient(
             circle at 82% 20%,
-            rgba(212, 175, 55, 0.08),
-            transparent 28%
+            rgba(212, 175, 55, 0.10),
+            transparent 30%
         ),
         linear-gradient(
             120deg,
-            #061a2d 0%,
-            #082842 50%,
-            #03101d 100%
+            #04182a 0%,
+            #082b46 52%,
+            #020c16 100%
         );
 }
 
 
 /* =====================================================
-   GOLD SIDE ACCENT
+   GOLD EDGE
 ===================================================== */
 
-.gold-accent {
+.gold-edge {
     position: absolute;
 
     left: 0;
@@ -93,8 +91,8 @@ body {
         linear-gradient(
             to bottom,
             transparent,
-            #d4af37 25%,
-            #d4af37 75%,
+            #d4af37 20%,
+            #d4af37 80%,
             transparent
         );
 }
@@ -108,53 +106,51 @@ body {
     position: absolute;
 
     left: 5%;
-    top: 4%;
+    top: 5%;
 
-    z-index: 20;
+    z-index: 10;
 }
 
-.brand {
+.logo-text {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        25px,
-        3vw,
-        46px
+        27px,
+        3.2vw,
+        50px
     );
 
     font-weight: 600;
 
     letter-spacing: 5px;
 
-    line-height: 1.05;
-
     color: #f8f5ec;
 }
 
-.brand span {
+.logo-text span {
     color: #d4af37;
 }
 
 .doctor-line {
-    margin-top: 8px;
+    margin-top: 9px;
 
-    color: #c7d2dc;
+    color: #aebdca;
 
     font-size: clamp(
-        11px,
-        0.95vw,
-        16px
+        10px,
+        .9vw,
+        15px
     );
 
-    letter-spacing: .4px;
+    letter-spacing: .5px;
 }
 
 .doctor-line strong {
     color: #d4af37;
 }
 
-.header-line {
-    width: 90px;
+.gold-line {
+    width: 85px;
     height: 2px;
 
     margin-top: 12px;
@@ -164,39 +160,39 @@ body {
 
 
 /* =====================================================
-   LEFT MAIN AREA
+   LEFT MAIN MESSAGE
 ===================================================== */
 
-.left-column {
+.message-area {
     position: absolute;
 
     left: 5%;
-    top: 25%;
+    top: 29%;
 
-    width: 45%;
+    width: 43%;
 
-    z-index: 10;
+    z-index: 5;
 }
 
 
 /* =====================================================
-   SILENT PHONE ICON
+   PHONE ICON
 ===================================================== */
 
-.icon-wrap {
-    width: 64px;
-    height: 64px;
+.phone-circle {
+    width: 68px;
+    height: 68px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 
     border:
         1px solid
-        rgba(212,175,55,.55);
+        rgba(212,175,55,.65);
 
     border-radius: 50%;
 
@@ -204,15 +200,15 @@ body {
         rgba(212,175,55,.05);
 
     box-shadow:
-        0 0 25px
-        rgba(212,175,55,.06);
+        0 0 30px
+        rgba(212,175,55,.08);
 }
 
 .phone {
     position: relative;
 
-    width: 27px;
-    height: 43px;
+    width: 28px;
+    height: 44px;
 
     border:
         2px solid
@@ -226,10 +222,10 @@ body {
 
     position: absolute;
 
-    top: 5px;
     left: 50%;
+    top: 5px;
 
-    width: 8px;
+    width: 9px;
     height: 2px;
 
     transform:
@@ -248,7 +244,7 @@ body {
     left: 50%;
     top: 50%;
 
-    width: 42px;
+    width: 43px;
     height: 3px;
 
     transform:
@@ -262,51 +258,51 @@ body {
 
 
 /* =====================================================
-   SILENT LABEL
+   LABEL
 ===================================================== */
 
-.hero-label {
-    margin-bottom: 9px;
-
+.message-label {
     color: #d4af37;
 
     font-size: clamp(
         10px,
-        .8vw,
+        .85vw,
         14px
     );
 
     font-weight: 700;
 
     letter-spacing: 3px;
+
+    margin-bottom: 10px;
 }
 
 
 /* =====================================================
-   SILENT TITLE
+   MAIN TITLE
 ===================================================== */
 
-.title {
+.main-title {
     font-family: "Cinzel", serif;
 
     font-size: clamp(
-        32px,
-        4vw,
-        62px
+        34px,
+        4.2vw,
+        67px
     );
 
-    line-height: 1.13;
+    line-height: 1.12;
 
     font-weight: 600;
 
     color: #ffffff;
 
     transition:
-        opacity .55s ease,
-        transform .55s ease;
+        opacity .5s ease,
+        transform .5s ease;
 }
 
-.title.fade {
+.main-title.fade {
     opacity: 0;
 
     transform:
@@ -319,29 +315,274 @@ body {
 ===================================================== */
 
 .quote {
-    margin-top: 13px;
+    margin-top: 17px;
 
-    max-width: 570px;
+    max-width: 600px;
 
-    color: #b9c6d2;
+    color: #b8c7d3;
 
     font-size: clamp(
-        13px,
-        1.1vw,
-        18px
+        14px,
+        1.15vw,
+        19px
     );
 
     line-height: 1.5;
 
     transition:
-        opacity .55s ease;
+        opacity .5s ease;
 }
 
 .quote.fade {
     opacity: 0;
 }
 
-.gold-text {
+.gold {
+    color: #d4af37;
+}
+
+
+/* =====================================================
+   QR AREA
+===================================================== */
+
+.qr-area {
+    position: absolute;
+
+    right: 4.5%;
+    top: 18%;
+
+    width: 48%;
+
+    z-index: 10;
+
+    padding:
+        25px 0 25px 35px;
+
+    border-left:
+        1px solid
+        rgba(212,175,55,.35);
+}
+
+
+/* =====================================================
+   QR HEADING
+===================================================== */
+
+.qr-heading {
+    text-align: center;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(
+        20px,
+        1.7vw,
+        29px
+    );
+
+    color: #ffffff;
+
+    margin-bottom: 5px;
+}
+
+.qr-heading span {
+    color: #d4af37;
+}
+
+.qr-subheading {
+    text-align: center;
+
+    color: #8ea2b3;
+
+    font-size: clamp(
+        10px,
+        .85vw,
+        14px
+    );
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   QR GRID
+===================================================== */
+
+.qr-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   QR CARD
+===================================================== */
+
+.qr-card {
+    text-align: center;
+
+    padding: 12px 7px 15px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.18);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.qr-card.review {
+    border-color:
+        rgba(212,175,55,.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,175,55,.10),
+            rgba(255,255,255,.025)
+        );
+}
+
+
+/* =====================================================
+   LARGE QR
+===================================================== */
+
+.qr {
+    display: block;
+
+    width: clamp(
+        130px,
+        11vw,
+        185px
+    );
+
+    height: clamp(
+        130px,
+        11vw,
+        185px
+    );
+
+    margin: auto;
+
+    padding: 7px;
+
+    background: white;
+
+    border-radius: 9px;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
+   QR TEXT
+===================================================== */
+
+.qr-title {
+    margin-top: 11px;
+
+    color: #d4af37;
+
+    font-size: clamp(
+        11px,
+        1vw,
+        16px
+    );
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.qr-description {
+    margin-top: 4px;
+
+    color: #9aabb9;
+
+    font-size: clamp(
+        8px,
+        .7vw,
+        12px
+    );
+
+    line-height: 1.35;
+}
+
+.discount {
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        9px,
+        .75vw,
+        13px
+    );
+}
+
+.discount strong {
+    color: #d4af37;
+}
+
+
+/* =====================================================
+   DOCTOR INFORMATION
+===================================================== */
+
+.doctor-card {
+    margin-top: 22px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(212,175,55,.25);
+
+    text-align: center;
+}
+
+.doctor-name {
+    font-family: "Cinzel", serif;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        17px,
+        1.4vw,
+        23px
+    );
+}
+
+.doctor-credentials {
+    margin-top: 5px;
+
+    color: #9eafbd;
+
+    font-size: clamp(
+        9px,
+        .8vw,
+        13px
+    );
+}
+
+.doctor-credentials span {
     color: #d4af37;
 }
 
@@ -354,56 +595,54 @@ body {
     position: absolute;
 
     left: 5%;
-    bottom: 17%;
+    bottom: 18%;
 
     width: 43%;
 
     z-index: 12;
 
-    padding-top: 12px;
+    padding-top: 13px;
 
     border-top:
         1px solid
         rgba(212,175,55,.25);
 }
 
-.why-heading {
-    margin-bottom: 7px;
-
+.why-title {
     color: #d4af37;
 
     font-family: "Cinzel", serif;
 
     font-size: clamp(
         13px,
-        1vw,
-        17px
+        1.05vw,
+        18px
     );
 
-    font-weight: 600;
-
     letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
 }
 
-.why-content {
-    min-height: 28px;
+.why-text {
+    min-height: 30px;
 
     color: #ffffff;
 
     font-size: clamp(
         13px,
-        1.15vw,
-        19px
+        1.2vw,
+        20px
     );
 
     font-weight: 500;
 
     transition:
-        opacity .6s ease,
-        transform .6s ease;
+        opacity .55s ease,
+        transform .55s ease;
 }
 
-.why-content.fade {
+.why-text.fade {
     opacity: 0;
 
     transform:
@@ -412,209 +651,23 @@ body {
 
 
 /* =====================================================
-   RIGHT COLUMN
-===================================================== */
-
-.right-column {
-    position: absolute;
-
-    top: 18%;
-    right: 5%;
-
-    width: 42%;
-
-    z-index: 10;
-
-    padding-left: 28px;
-
-    border-left:
-        1px solid
-        rgba(212,175,55,.32);
-}
-
-
-/* =====================================================
-   QR HEADING
-===================================================== */
-
-.qr-heading {
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(
-        18px,
-        1.45vw,
-        24px
-    );
-
-    color: #ffffff;
-
-    margin-bottom: 4px;
-}
-
-.qr-heading span {
-    color: #d4af37;
-}
-
-.qr-description {
-    margin-bottom: 16px;
-
-    color: #8fa2b5;
-
-    font-size: clamp(
-        10px,
-        .78vw,
-        13px
-    );
-}
-
-
-/* =====================================================
-   QR GRID
-===================================================== */
-
-.qr-list {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 14px;
-}
-
-.qr-item {
-    text-align: center;
-}
-
-.qr {
-    display: block;
-
-    width: clamp(
-        100px,
-        8vw,
-        130px
-    );
-
-    height: clamp(
-        100px,
-        8vw,
-        130px
-    );
-
-    padding: 6px;
-
-    margin: auto;
-
-    background: #ffffff;
-
-    border-radius: 7px;
-
-    object-fit: contain;
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.25);
-}
-
-.qr-name {
-    margin-top: 8px;
-
-    color: #d4af37;
-
-    font-size: clamp(
-        9px,
-        .8vw,
-        13px
-    );
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-}
-
-.qr-text {
-    margin-top: 3px;
-
-    color: #8999a9;
-
-    font-size: clamp(
-        8px,
-        .65vw,
-        11px
-    );
-}
-
-.discount {
-    margin-top: 3px;
-
-    color: #ffffff;
-
-    font-size: clamp(
-        8px,
-        .65vw,
-        11px
-    );
-}
-
-.discount strong {
-    color: #d4af37;
-}
-
-
-/* =====================================================
-   DOCTOR CREDENTIALS
-===================================================== */
-
-.credentials {
-    margin-top: 25px;
-
-    padding-top: 13px;
-
-    border-top:
-        1px solid
-        rgba(212,175,55,.20);
-}
-
-.credential-name {
-    color: #ffffff;
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(
-        16px,
-        1.25vw,
-        21px
-    );
-
-    margin-bottom: 4px;
-}
-
-.credential-details {
-    color: #aab8c4;
-
-    font-size: clamp(
-        10px,
-        .82vw,
-        14px
-    );
-
-    line-height: 1.5;
-}
-
-.gold-dot {
-    color: #d4af37;
-}
-
-
-/* =====================================================
    COMFORT MESSAGE
 ===================================================== */
 
 .comfort {
-    margin-top: 17px;
+    position: absolute;
 
-    min-height: 25px;
+    right: 5%;
 
-    color: #c6d1db;
+    bottom: 18%;
+
+    width: 43%;
+
+    z-index: 10;
+
+    text-align: center;
+
+    color: #aebdca;
 
     font-size: clamp(
         11px,
@@ -625,34 +678,32 @@ body {
     font-style: italic;
 
     transition:
-        opacity .6s ease,
-        transform .6s ease;
+        opacity .55s ease;
 }
 
 .comfort.fade {
     opacity: 0;
-
-    transform:
-        translateY(7px);
 }
 
 
 /* =====================================================
-   SERVICES BAR
+   SERVICES
 ===================================================== */
 
 .services {
     position: absolute;
 
-    left: 5%;
-    right: 5%;
+    left: 4.5%;
+    right: 4.5%;
 
-    bottom: 8.5%;
+    bottom: 9%;
 
     z-index: 20;
 
+    text-align: center;
+
     padding:
-        9px 0;
+        10px 0;
 
     border-top:
         1px solid
@@ -662,19 +713,17 @@ body {
         1px solid
         rgba(212,175,55,.18);
 
-    text-align: center;
-
-    white-space: nowrap;
-
-    color: #91a2b1;
+    color: #9aaab8;
 
     font-size: clamp(
         8px,
-        .72vw,
-        12px
+        .75vw,
+        13px
     );
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.2px;
+
+    white-space: nowrap;
 }
 
 .services span {
@@ -683,7 +732,7 @@ body {
 
 
 /* =====================================================
-   CONTACT BAR
+   CONTACT
 ===================================================== */
 
 .contact {
@@ -694,17 +743,17 @@ body {
 
     bottom: 3%;
 
-    z-index: 20;
-
     display: flex;
+
+    align-items: center;
 
     justify-content: space-between;
 
-    align-items: center;
+    z-index: 20;
 }
 
-.contact-clinic {
-    color: #718596;
+.location {
+    color: #708493;
 
     font-size: clamp(
         9px,
@@ -715,88 +764,87 @@ body {
     letter-spacing: 1px;
 }
 
-.contact-numbers {
+.phone-numbers {
     display: flex;
 
-    gap: 25px;
+    gap: 30px;
 
-    color: #ffffff;
+    color: white;
 
     font-size: clamp(
         10px,
         .85vw,
-        14px
+        15px
     );
 
     font-weight: 600;
 }
 
-.number {
+.phone-numbers strong {
     color: #d4af37;
 }
 
 
 /* =====================================================
-   FULL HD 1920 × 1080
+   1920 × 1080 TV
 ===================================================== */
 
 @media
 (min-width: 1500px)
 and (min-height: 850px) {
 
-    .left-column {
-        top: 25%;
-    }
-
-    .why-section {
-        bottom: 17%;
-    }
-
-    .right-column {
-        top: 18%;
+    .qr-area {
+        top: 17%;
     }
 
     .qr {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-
-/* =====================================================
-   1366 × 768 AND SIMILAR
-===================================================== */
-
-@media (max-width: 1450px) {
-
-    .brand {
-        font-size: 30px;
+        width: 180px;
+        height: 180px;
     }
 
-    .left-column {
-        top: 25%;
-    }
-
-    .title {
-        font-size: 42px;
+    .message-area {
+        top: 29%;
     }
 
     .why-section {
         bottom: 18%;
     }
+}
 
-    .right-column {
-        top: 18%;
-        width: 43%;
+
+/* =====================================================
+   1366 × 768
+===================================================== */
+
+@media
+(min-width: 1100px)
+and (max-width: 1499px) {
+
+    .logo-text {
+        font-size: 32px;
+    }
+
+    .message-area {
+        top: 28%;
+    }
+
+    .main-title {
+        font-size: 43px;
+    }
+
+    .qr-area {
+        top: 16%;
+        width: 49%;
+        padding-left: 25px;
     }
 
     .qr {
-        width: 105px;
-        height: 105px;
+        width: 125px;
+        height: 125px;
     }
 
-    .credentials {
-        margin-top: 18px;
+    .why-section {
+        bottom: 18%;
     }
 
     .services {
@@ -806,50 +854,59 @@ and (min-height: 850px) {
 
 
 /* =====================================================
-   VERY SMALL LANDSCAPE
+   SHORT LANDSCAPE SCREENS
 ===================================================== */
 
-@media (max-height: 650px) {
+@media (max-height: 700px) {
 
     .header {
         top: 3%;
     }
 
-    .left-column {
-        top: 23%;
+    .message-area {
+        top: 25%;
     }
 
-    .icon-wrap {
-        transform: scale(.8);
+    .phone-circle {
+        width: 52px;
+        height: 52px;
 
-        transform-origin: left center;
-
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 
-    .title {
-        font-size: 35px;
+    .main-title {
+        font-size: 34px;
     }
 
     .quote {
-        font-size: 13px;
+        font-size: 12px;
+        margin-top: 9px;
     }
 
-    .why-section {
-        bottom: 16%;
+    .qr-area {
+        top: 13%;
     }
 
-    .right-column {
-        top: 16%;
+    .qr-heading {
+        font-size: 18px;
+    }
+
+    .qr-subheading {
+        margin-bottom: 10px;
     }
 
     .qr {
-        width: 90px;
-        height: 90px;
+        width: 95px;
+        height: 95px;
     }
 
-    .credentials {
-        margin-top: 12px;
+    .doctor-card {
+        margin-top: 10px;
+        padding-top: 8px;
+    }
+
+    .why-section {
+        bottom: 17%;
     }
 
     .services {
@@ -869,7 +926,7 @@ and (min-height: 850px) {
 
 <div class="screen">
 
-    <div class="gold-accent"></div>
+    <div class="gold-edge"></div>
 
 
     <!-- =================================================
@@ -878,7 +935,7 @@ and (min-height: 850px) {
 
     <header class="header">
 
-        <div class="brand">
+        <div class="logo-text">
             A.R.
             <span>PLASTIC SURGERY</span>
         </div>
@@ -889,53 +946,39 @@ and (min-height: 850px) {
             Plastic, Cosmetic & Hair Transplant Surgeon
         </div>
 
-        <div class="header-line"></div>
+        <div class="gold-line"></div>
 
     </header>
 
 
     <!-- =================================================
-         LEFT COLUMN
+         MAIN SILENT MESSAGE
     ================================================== -->
 
-    <div class="left-column">
+    <section class="message-area">
 
-
-        <!-- PHONE ICON -->
-
-        <div class="icon-wrap">
-
+        <div class="phone-circle">
             <div class="phone"></div>
-
         </div>
 
-
-        <!-- LABEL -->
-
-        <div class="hero-label">
+        <div class="message-label">
             A COURTESY FOR EVERYONE
         </div>
 
-
-        <!-- MAIN MESSAGE -->
-
         <div
-            id="title"
-            class="title">
+            id="mainTitle"
+            class="main-title">
 
             Please Keep Your Phone<br>
             on Silent Mode
 
         </div>
 
-
-        <!-- QUOTE -->
-
         <div
             id="quote"
             class="quote">
 
-            <span class="gold-text">
+            <span class="gold">
                 A little silence
             </span>
             makes the waiting room
@@ -943,7 +986,7 @@ and (min-height: 850px) {
 
         </div>
 
-    </div>
+    </section>
 
 
     <!-- =================================================
@@ -952,13 +995,13 @@ and (min-height: 850px) {
 
     <section class="why-section">
 
-        <div class="why-heading">
+        <div class="why-title">
             WHY CHOOSE A.R. PLASTIC SURGERY?
         </div>
 
         <div
-            id="whyContent"
-            class="why-content">
+            id="whyText"
+            class="why-text">
 
             Experienced Surgical Care
 
@@ -968,46 +1011,40 @@ and (min-height: 850px) {
 
 
     <!-- =================================================
-         RIGHT COLUMN
+         QR AREA
     ================================================== -->
 
-    <aside class="right-column">
-
-
-        <!-- QR HEADING -->
+    <section class="qr-area">
 
         <div class="qr-heading">
             Stay Connected
             <span>With Us</span>
         </div>
 
-
-        <div class="qr-description">
-            Scan to review, follow or contact our team.
+        <div class="qr-subheading">
+            Scan to connect with A.R. Plastic Surgery
         </div>
 
 
-        <!-- QR CODES -->
-
-        <div class="qr-list">
+        <div class="qr-grid">
 
 
             <!-- REVIEW -->
 
-            <div class="qr-item">
+            <div class="qr-card review">
 
                 <img
                     src="review-qr.png"
                     class="qr"
-                    alt="Review QR Code"
+                    alt="Google Review QR Code"
                 >
 
-                <div class="qr-name">
+                <div class="qr-title">
                     REVIEW
                 </div>
 
-                <div class="qr-text">
-                    Share your experience
+                <div class="qr-description">
+                    Rate your experience
                 </div>
 
                 <div class="discount">
@@ -1020,7 +1057,7 @@ and (min-height: 850px) {
 
             <!-- INSTAGRAM -->
 
-            <div class="qr-item">
+            <div class="qr-card">
 
                 <img
                     src="instagram-qr.png"
@@ -1028,11 +1065,11 @@ and (min-height: 850px) {
                     alt="Instagram QR Code"
                 >
 
-                <div class="qr-name">
+                <div class="qr-title">
                     INSTAGRAM
                 </div>
 
-                <div class="qr-text">
+                <div class="qr-description">
                     Follow our page
                 </div>
 
@@ -1041,7 +1078,7 @@ and (min-height: 850px) {
 
             <!-- WHATSAPP -->
 
-            <div class="qr-item">
+            <div class="qr-card">
 
                 <img
                     src="whatsapp-qr.png"
@@ -1049,57 +1086,58 @@ and (min-height: 850px) {
                     alt="WhatsApp QR Code"
                 >
 
-                <div class="qr-name">
+                <div class="qr-title">
                     WHATSAPP
                 </div>
 
-                <div class="qr-text">
-                    Book an appointment
+                <div class="qr-description">
+                    Chat with our team
                 </div>
 
             </div>
-
 
         </div>
 
 
-        <!-- DOCTOR CREDENTIALS -->
+        <!-- DOCTOR -->
 
-        <section class="credentials">
+        <div class="doctor-card">
 
-            <div class="credential-name">
+            <div class="doctor-name">
                 Dr. Ashok Reddy
             </div>
 
-            <div class="credential-details">
+            <div class="doctor-credentials">
 
                 MBBS
-                <span class="gold-dot">•</span>
+                <span>•</span>
 
                 DNB (Mumbai)
-                <span class="gold-dot">•</span>
+                <span>•</span>
 
                 M.Ch (Delhi)
-                <span class="gold-dot">•</span>
+                <span>•</span>
 
                 Gold Medalist
 
             </div>
 
-        </section>
-
-
-        <!-- COMFORT MESSAGE -->
-
-        <div
-            id="comfort"
-            class="comfort">
-
-            Your comfort matters to us.
-
         </div>
 
-    </aside>
+    </section>
+
+
+    <!-- =================================================
+         COMFORT
+    ================================================== -->
+
+    <div
+        id="comfort"
+        class="comfort">
+
+        Your comfort matters to us.
+
+    </div>
 
 
     <!-- =================================================
@@ -1131,29 +1169,22 @@ and (min-height: 850px) {
 
     <footer class="contact">
 
-        <div class="contact-clinic">
-
+        <div class="location">
             A.R. PLASTIC SURGERY
             &nbsp;•&nbsp;
             KARIMNAGAR
-
         </div>
 
-
-        <div class="contact-numbers">
+        <div class="phone-numbers">
 
             <div>
                 Call
-                <span class="number">
-                    9182656866
-                </span>
+                <strong>9182656866</strong>
             </div>
 
             <div>
                 Call
-                <span class="number">
-                    6281395312
-                </span>
+                <strong>6281395312</strong>
             </div>
 
         </div>
@@ -1169,16 +1200,16 @@ and (min-height: 850px) {
    ELEMENTS
 ===================================================== */
 
-const titleElement =
-    document.getElementById("title");
+const mainTitle =
+    document.getElementById("mainTitle");
 
-const quoteElement =
+const quote =
     document.getElementById("quote");
 
-const whyContentElement =
-    document.getElementById("whyContent");
+const whyText =
+    document.getElementById("whyText");
 
-const comfortElement =
+const comfort =
     document.getElementById("comfort");
 
 
@@ -1186,27 +1217,26 @@ const comfortElement =
    ENGLISH / TELUGU
 ===================================================== */
 
-let englishMode = true;
+let english = true;
 
 
 function changeLanguage() {
 
-    titleElement.classList.add("fade");
+    mainTitle.classList.add("fade");
 
-    quoteElement.classList.add("fade");
+    quote.classList.add("fade");
 
 
     setTimeout(function () {
 
-        if (englishMode) {
+        if (english) {
 
-            titleElement.innerHTML =
+            mainTitle.innerHTML =
                 "దయచేసి మీ ఫోన్‌ను<br>" +
                 "సైలెంట్ మోడ్‌లో ఉంచండి";
 
-
-            quoteElement.innerHTML =
-                '<span class="gold-text">' +
+            quote.innerHTML =
+                '<span class="gold">' +
                 'మీ నిశ్శబ్దం' +
                 '</span> అందరికీ ' +
                 'సౌకర్యవంతమైన వాతావరణాన్ని ' +
@@ -1214,13 +1244,12 @@ function changeLanguage() {
 
         } else {
 
-            titleElement.innerHTML =
+            mainTitle.innerHTML =
                 "Please Keep Your Phone<br>" +
                 "on Silent Mode";
 
-
-            quoteElement.innerHTML =
-                '<span class="gold-text">' +
+            quote.innerHTML =
+                '<span class="gold">' +
                 'A little silence' +
                 '</span> makes the waiting room ' +
                 'comfortable for everyone.';
@@ -1228,59 +1257,11 @@ function changeLanguage() {
         }
 
 
-        englishMode =
-            !englishMode;
+        english = !english;
 
+        mainTitle.classList.remove("fade");
 
-        titleElement.classList.remove("fade");
+        quote.classList.remove("fade");
 
-        quoteElement.classList.remove("fade");
-
-    }, 550);
+    }, 500);
 }
-
-
-/*
-   Switch every 5 seconds
-*/
-
-setInterval(
-    changeLanguage,
-    5000
-);
-
-
-/* =====================================================
-   WHY CHOOSE ROTATION
-===================================================== */
-
-const whyMessages = [
-
-    "Experienced Surgical Care",
-
-    "Patient-Centred Approach",
-
-    "Advanced Techniques",
-
-    "Privacy & Comfort",
-
-    "Natural-Looking Results"
-
-];
-
-let whyIndex = 0;
-
-
-function changeWhyMessage() {
-
-    whyContentElement.classList.add("fade");
-
-
-    setTimeout(function () {
-
-        whyIndex =
-            (whyIndex + 1)
-            % whyMessages.length;
-
-
-        whyContentElement.textContent 
